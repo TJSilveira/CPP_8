@@ -1,22 +1,22 @@
 #include "../includes/Span.hpp"
 
 Span::Span(void) : _capacity(0), _size(0), is_sorted(false)  {
-	std::cout << "[Span] Default constructor called. "
-            << "Capacity assigned: " << this->_capacity << ";\n";
+	// std::cout << "[Span] Default constructor called. "
+            // << "Capacity assigned: " << this->_capacity << ";\n";
   return;
 }
 
 Span::Span(unsigned int N) : _capacity(N), _size(0), is_sorted(false) {
-  std::cout << "[Span] Default constructor with specified Capacity called. "
-            << "Capacity assigned: " << this->_capacity << ";\n";
+  // std::cout << "[Span] Default constructor with specified Capacity called. "
+            // << "Capacity assigned: " << this->_capacity << ";\n";
   return;
 }
 
 
 Span::Span(const Span &other) {
   *this = other;
-  std::cout << "[Span] Copy constructor called. "
-            << "Capacity assigned: " << this->_capacity << ";\n";
+  // std::cout << "[Span] Copy constructor called. "
+            // << "Capacity assigned: " << this->_capacity << ";\n";
   return;
 }
 
@@ -28,13 +28,13 @@ Span &Span::operator=(const Span &other) {
   this->_capacity = other._size;
 	this->num_container = other.num_container;
 	this->is_sorted = other.is_sorted;
-	  std::cout << "[Span] Copy assignment operator called. "
-            << "Capacity assigned: " << this->_capacity << ";\n";
+	  // std::cout << "[Span] Copy assignment operator called. "
+            // << "Capacity assigned: " << this->_capacity << ";\n";
   return *this;
 }
 
 Span::~Span() { 
-	std::cout << "[Span] Destructor called" << std::endl;
+	// std::cout << "[Span] Destructor called" << std::endl;
 }
 
 unsigned int	Span::getSize()

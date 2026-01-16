@@ -6,7 +6,7 @@
 /*   By: tsilveir <tsilveir@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 17:29:01 by tsilveir          #+#    #+#             */
-/*   Updated: 2026/01/15 20:27:36 by tsilveir         ###   ########.fr       */
+/*   Updated: 2026/01/16 12:43:58 by tsilveir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ public:
 			throw Span::SpanFull();
 		num_container.insert(num_container.end(), first, last);
 		_size = num_container.size();
+		is_sorted = false;
 	}
 
   unsigned int shortestSpan();
