@@ -6,40 +6,41 @@
 /*   By: tsilveir <tsilveir@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 17:29:01 by tsilveir          #+#    #+#             */
-/*   Updated: 2026/01/16 12:43:58 by tsilveir         ###   ########.fr       */
+/*   Updated: 2026/01/22 08:47:56 by tsilveir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <exception>
-#include <vector>
-#include <iterator>
+#include <algorithm>
 #include <cstdio>
 #include <cstdlib>
+#include <exception>
 #include <iostream>
-#include <algorithm>
+#include <iterator>
+#include <vector>
 
-
-class Span {
-private:
-  unsigned int _capacity;
-  unsigned int _size;
+class Span
+{
+  private:
+	unsigned int _capacity;
+	unsigned int _size;
 	bool is_sorted;
-  std::vector<int> num_container;
-public:
-  Span();
-  Span(const Span &other);
-  Span(unsigned int N);
-  ~Span();
+	std::vector<int> num_container;
 
-  Span &operator=(const Span &other);
+  public:
+	Span();
+	Span(const Span &other);
+	Span(unsigned int N);
+	~Span();
+
+	Span &operator=(const Span &other);
 
 	// Getter
-	unsigned int	getSize();
+	unsigned int getSize();
 
 	// Methods
-	void	addNumber(int num_to_append);
+	void addNumber(int num_to_append);
 
-	template<typename Iterator> void addNumber(Iterator first, Iterator last)
+	template <typename Iterator> void addNumber(Iterator first, Iterator last)
 	{
 		unsigned int elements_to_add = std::distance(first, last);
 
@@ -50,15 +51,17 @@ public:
 		is_sorted = false;
 	}
 
-  unsigned int shortestSpan();
-  unsigned int longestSpan();
+	unsigned int shortestSpan();
+	unsigned int longestSpan();
 
-  class SpanFull : public std::exception {
-  public:
-    virtual const char *what() const throw();
-  };
-  class SpanNotFound : public std::exception {
-  public:
-    virtual const char *what() const throw();
-  };
+	class SpanFull : public std::exception
+	{
+		public:
+		virtual const char *what() const throw();
+	};
+	class SpanNotFound : public std::exception
+	{
+		public:
+		virtual const char *what() const throw();
+	};
 };
